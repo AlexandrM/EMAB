@@ -9,4 +9,4 @@ Web.connectionStrings.config.default -> Web.connectionStrings.config
 
 Web.smtp.config.default -> Web.smtp.config
 
-#### Add connection string in Web.appSettings.config
+#### Add connection string to Web.appSettings.config
