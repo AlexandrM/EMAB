@@ -1,0 +1,14 @@
+.vs/
+_Published/
+EMAB/bin/
+EMAB/bower_components/
+EMAB/node_modules/
+EMAB/obj/
+packages/
+EMAB/EMAB.csproj.user
+EMAB/Web.appSettings.config
+EMAB/Web.connectionStrings.config
+EMAB/Web.smtp.config
+EMAB/Properties/PublishProfiles/ToFolder-Debug.pubxml.user
+EMAB/Properties/PublishProfiles/ToFolder-Release.pubxml.user
+EMAB/Scripts/dis.js

@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = null;
+}
+
+<h2>Users list</h2>
+
+<div class="row">
+    <button class="btn btn-default" ui-sref="user({ id: '' })">Add user</button>
+</div>
+<hr />
+
+<div class="row animate-show-hide" ng-show="messages.items.length != 0">
+    <div class="alert" ng-class="{'alert-danger': !messages.success, 'alert-success': messages.success}" role="alert">
+        <p ng-repeat="item in messages.items">{{item}}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <tr>
+                <th class="col-md-2">User name</th>
+                <th class="col-md-2">Email</th>
+                <th class="col-md-2">First name</th>
+                <th class="col-md-2">Last name</th>
+                <th class="col-md-2">Password</th>
+                <th class="col-md-2"></th>
+            </tr>
+            <tbody ng-repeat="user in users">
+                <tr class="" ng-show="!user.isEditMode">
+                    <td>
+                        <a ui-sref="user({ id : user.Id})">{{user.UserName}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="user({ id : user.Id})">{{user.Email}}</a>
+                    </td>
+                    <td>
+                        {{user.FirstName}}
+                    </td>
+                    <td>
+                        {{user.LastName}}
+                    </td>
+                    <td>***</td>
+                    <td>
+                        <button class="btn btn-default" ng-click="editUser(user)">Edit</button>
+                    </td>
+                </tr>
+                <tr class="" ng-show="user.isEditMode">
+                    <td>
+                        <a ui-sref="user({ id : user.Id})">{{user.UserName}}</a>
+                    </td>
+                    <td>
+                        <input class="form-control" ng-model="user.editUser.Email" placeholder="Email"/>
+                    </td>
+                    <td>
+                        <input class="form-control" ng-model="user.editUser.FirstName" placeholder="FirstName" />
+                    </td>
+                    <td>
+                        <input class="form-control" ng-model="user.editUser.LastName" placeholder="LastName" />
+                    </td>
+                    <td>
+                        <input class="form-control" type="password" ng-model="user.editUser.Password" placeholder="Fill password to change" />
+                    </td>
+                    <td>
+                        <button class="btn btn-default" ng-click="saveUser(user)">Save</button>
+                        <button class="btn btn-warning" ng-click="user.isEditMode = false">Cancel</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
